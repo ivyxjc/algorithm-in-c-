@@ -6,8 +6,10 @@ set(CMAKE_CXX_STANDARD 11)
 #add_executable(algorithm_in_c++ src/dp/steel_cut.cpp)
 
 
-file( GLOB APP_SOURCES src/*/*.cpp )
-foreach( appsourcefile ${APP_SOURCES} )
-	get_filename_component( file_name ${appsourcefile} NAME_WE)
-	add_executable(algorithm_in_c++ ${appsourcefile} )
-endforeach( appsourcefile ${APP_SOURCES} )
+file(GLOB APP_SOURCES src/*/*.cpp)
+
+foreach (appsourcefile ${APP_SOURCES})
+    get_filename_component(file_name ${appsourcefile} NAME_WE)
+    message(${file_name})
+    add_executable(${file_name} ${appsourcefile})
+endforeach (appsourcefile ${APP_SOURCES})
